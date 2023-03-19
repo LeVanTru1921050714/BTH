@@ -15,15 +15,7 @@ public class PTB2Controller : Controller
     public IActionResult Index(string hesoA, string hesoB, string hesoC)
     {
         string ketqua = "";
-        double a = 0, b, c;
-        if(!string.IsNullOrEmpty(hesoA)) a = Convert.ToDouble(hesoA);
-        if(!string.IsNullOrEmpty(hesoB)) b = Convert.ToDouble(hesoB);
-        if(!string.IsNullOrEmpty(hesoC)) c = Convert.ToDouble(hesoC);
-        if(a == 0) ketqua = "Day khong phai phuong trinh bac 2";
-        else
-        {
-            ketqua = gpt.Giaiphuongtrinh(hesoA,hesoB,hesoC);           
-        }
+        ketqua = gpt.Giaiphuongtrinh(hesoA,hesoB,hesoC);           
         ViewBag.mess = ketqua;
         return View();
     }
